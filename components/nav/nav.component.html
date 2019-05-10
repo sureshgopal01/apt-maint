@@ -1,0 +1,19 @@
+  <!--<nav class="navbar navbar-default navbar-toggleable navbar-inverse bg-inverse" *ngIf="isLoggedIn$ | async" > -->
+
+  <!--<nav color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <!-- more HTML template code -->
+<nav class="navbar navbar-default navbar-toggleable navbar-inverse bg-inverse" *ngIf="isLoggedIn$">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="#">Sai Nilayam</a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li routerLinkActive = 'active'><a routerLink="/home">Home</a></li>
+        <li routerLinkActive = 'active'><a routerLink="/properties">Properties</a></li>
+        <li routerLinkActive = 'active'><a  routerLink="/about">About Us</a></li>
+		    <li> <button mat-button (click)="onLogout()" *ngIf="isLoggedIn$">Logout</button></li>
+      </ul>
+    </div>
+  <!-- </nav> -->
+</nav>

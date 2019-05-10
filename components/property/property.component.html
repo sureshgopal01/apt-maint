@@ -1,0 +1,47 @@
+<router-outlet></router-outlet>
+<top-nav> </top-nav>
+<h1>{{title}} Property </h1>
+<hr>
+<div>{{errorMessage}}</div>
+<form [formGroup]="propertyForm" (ngSubmit)="save()" novalidate>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Name</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control"
+                   formControlName="propertyName">                   
+        </div>
+
+        <div class="col-md-6">
+			<div class="error" *ngIf="propertyName.invalid && (propertyName.dirty || submitted)">
+                <div *ngIf="propertyName.errors.required">
+                    Name is required
+                </div>
+                <div *ngIf="propertyName.errors.minlength">
+                   Min. 3 charaters
+                </div>
+                <div *ngIf="propertyName.errors.maxlength">
+                    Must not exceed 30 charaters
+                </div>
+            </div>
+		</div>
+    </div>
+    <div class="form-group row">
+        <label for="" class="col-md-12">Value</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control"
+                    formControlName="propertyValue" >
+        </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-12">
+         <input type="submit" 
+                class="btn btn-primary" 
+                value="Save" />
+         <input type="button" 
+                class="btn btn-warning" 
+                value="Cancel"
+                (click)="cancel()">
+      </div>
+
+    </div>
+</form>
